@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class Compras {
+	public static void main(String[] args) {
+	    ArrayList<String> compras = new ArrayList<>();
+
+        compras.add("Arroz");
+        compras.add("Feijao");
+        compras.add("Macarrao");
+        compras.add("Caixa de leite");
+        compras.add("Tomate");
+
+        for (int i =0; i < compras.size(); i++) {
+            System.out.println(compras.get(i));
+
+        }
+	    System.out.println("Quantidade de produtos: " + compras.size());
+		
+	}
+}
+
