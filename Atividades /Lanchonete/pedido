@@ -1,1 +1,49 @@
 
+public class Pedido {
+    private int numero;
+    private String nomeCliente;
+    private String itemPedido;
+    private double valor;
+    private String status;
+
+ public Pedido(int numero, String nomeCliente, String itemPedido, double valor, String status) {
+
+        this.numero = numero;
+        this.nomeCliente = nomeCliente;
+        this.itemPedido = itemPedido;
+        this.valor = valor;
+        this.status = status;
+    }
+    
+     public int getNumero() {
+        return this.numero;
+    }
+
+     public String getNomeCliente() {
+        return this.nomeCliente;
+    }
+
+     public String getItemPedido() {
+        return this.itemPedido;
+    }
+
+     public double getValor() {
+        return this.valor;
+    }
+
+     public String getStatus() {
+        return this.status;
+    }
+
+     public String exibirInformacoes() {
+        return "\nNumero: " + this.numero +
+                "\nNomeCliente: " + this.nomeCliente +
+                "\nItemPedido: " + this.itemPedido +
+                "\nValor: " + this.valor +
+                "\nStatus: " + this.status +
+                "\n-----------------------------";
+     }
+                public void setStatus(String status) {
+                this.status = status;
+      }
+  }
