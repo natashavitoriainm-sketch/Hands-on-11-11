@@ -6,25 +6,26 @@ public class Livro {
     private boolean disponivel;
 
     public Livro(int codigo, String titulo, String autor, boolean disponivel) {
-        this.codigo = codigo;
-        this.titulo = titulo;
-        this.autor = autor;
-        this.disponivel = disponivel;
-     }
-     public int getCodigo() {
-        return this.codigo;
-    
-    }
-     public String getTitulo() {
-        return this.titulo;
-    
-    }
-     public String getAutor() {
-        return this.autor;
+    this.codigo = codigo;
+    this.titulo = titulo;
+    this.autor = autor;
+    this.disponivel = disponivel;
     }
 
-     public boolean getDisponivel() {
-        return this.disponivel;
+    public int getCodigo() {
+    return this.codigo;
+    }
+
+    public String getTitulo() {
+    return this.titulo;
+    }
+
+    public String getAutor() {
+    return this.autor;
+    }
+
+    public boolean getDisponivel() {
+    return this.disponivel;
     }
 
     public void setCodigo(int codigo) {
@@ -43,7 +44,7 @@ public class Livro {
     this.disponivel = disponivel;
     }
      
-     public String exibirInformacoes() {
+    public String exibirInformacoes() {
         return "\nCodigo: " + this.codigo +
                 "\nTitulo: " + this.titulo +
                 "\nAutor: " + this.autor +
