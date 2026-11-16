@@ -30,83 +30,90 @@ public class Main {
         switch (opcao) {
             case 1: {
                 System.out.println("Codigo do livro: ");
-                    int codigo = sc.nextInt(); 
-                    sc.nextLine();
+                int codigo = sc.nextInt(); 
+                sc.nextLine();
 
-                    System.out.println("Tutulor do livro: ");
-                    String titulo = sc.nextLine();
+                System.out.println("Tutulor do livro: ");
+                String titulo = sc.nextLine();
                     
-                    System.out.println("O autor do livro: ");
-                    String autor = sc.nextLine();
+                System.out.println("O autor do livro: ");
+                String autor = sc.nextLine();
 
-                    livros.add(new Livro(codigo, titulo, autor, disponivel));
+                livros.add(new Livro(codigo, titulo, autor, disponivel));
                     
-                   System.out.println("Livro cadastrado com sucesso!");
-                   break;
+                System.out.println("Livro cadastrado com sucesso!");
+                break;
                 }
+
             case 2: {
                 for (Livro l : livros) {
-                    System.out.println(l.exibirInformacoes());
+                System.out.println(l.exibirInformacoes());
                  }
                 }    
                 break;
+
             case 3: {
-                 System.out.println("Titulo do livro: ");
-                    sc.nextLine();
-                    String busca = sc.nextLine();
+                System.out.println("Titulo do livro: ");
+                sc.nextLine();
+                String busca = sc.nextLine();
 
-                    boolean encontrado = false;
+                boolean encontrado = false;
 
-                    for (Livro l : livros) {
-                        if (l.getTitulo().equalsIgnoreCase(busca)) {
-                            encontrado = true;
+                for (Livro l : livros) {
+                if (l.getTitulo().equalsIgnoreCase(busca)) {
+                encontrado = true;
 
-                    if (l.getDisponivel()) {
-                         l.setDisponivel(false);
-                        System.out.println("Livro emprestado!");
-                    } else {
-                    System.out.println("Livro ja esta emprestado!");
-                    }
+                if (l.getDisponivel()) {
+                 l.setDisponivel(false);
+
+                System.out.println("Livro emprestado!");
+                } else {
+                System.out.println("Livro ja esta emprestado!");
+
+                  }
+                 }
                 }
-            }
-                    if (!encontrado) {
-                    System.out.println("Livro nao encontrado!");
+
+                if (!encontrado) {
+                System.out.println("Livro nao encontrado!");
                   
-                    }
-                    break;
+                }
+                break;
+
                 }
             case 4:{
                 System.out.println("Titulo do livro: ");
                 sc.nextLine();
                 String busca = sc.nextLine();
 
-                   boolean encontrado = false;
+                boolean encontrado = false;
 
-                   for (Livro l : livros) {
-                   if (l.getTitulo().equalsIgnoreCase(busca)) {
-                   encontrado = true;
+                for (Livro l : livros) {
+                if (l.getTitulo().equalsIgnoreCase(busca)) {
+                encontrado = true;
 
-                    if (!l.getDisponivel()) {
-                    l.setDisponivel(true);
-                    System.out.println("Livro devolvido com sucesso!");
-                   } else {
-                   System.out.println("Este livro ja esta disponivel!");
-                   }
+                if (!l.getDisponivel()) {
+                l.setDisponivel(true);
+                System.out.println("Livro devolvido com sucesso!");
+
+                } else {
+                System.out.println("Este livro ja esta disponivel!");
+                  }
                  }
                 }
 
-                  if (!encontrado) {
-                  System.out.println("Livro nao encontrado!");
-                 }
+                if (!encontrado) {
+                System.out.println("Livro nao encontrado!");
+                }
+                break;
+                }
+                
+                case 0:
+                System.out.println("Saindo...");
+                break;
 
-                 break;
-                 }
-                 case 0:
-                 System.out.println("Saindo...");
-                 break;
-
-                 default:
-                 System.out.println("Opcao invalida!");
+                default:
+                System.out.println("Opcao invalida!");
                 }
                 
             } while (opcao != 0);
@@ -114,4 +121,3 @@ public class Main {
             sc.close();
         }
     }
-      
