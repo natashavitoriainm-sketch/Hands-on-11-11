@@ -26,109 +26,109 @@ public class Main {
         opcao = sc.nextInt();
         sc.nextLine();
 
-         switch (opcao) {
-                case 1: {
-                    System.out.println("Digite o numero do pedidos: ");
-                    int numero = sc.nextInt();
-                    sc.nextLine();
+    switch (opcao) {
+        case 1: {
+            System.out.println("Digite o numero do pedidos: ");
+            int numero = sc.nextInt();
+            sc.nextLine();
 
-                    System.out.println("Digite o nome do cliente: ");
-                    String nomeCliente = sc.nextLine();
+            System.out.println("Digite o nome do cliente: ");
+            String nomeCliente = sc.nextLine();
 
-                    System.out.println("Digite o item do pedido: ");
-                    String itemPedido = sc.nextLine();
+            System.out.println("Digite o item do pedido: ");
+            String itemPedido = sc.nextLine();
 
-                    System.out.println("Digite o valor do pedido: ");
-                    double valor = sc.nextDouble();
-                    sc.nextLine();
+            System.out.println("Digite o valor do pedido: ");
+            double valor = sc.nextDouble();
+            sc.nextLine();
 
-                    String status = "PENDENTE";
+            String status = "PENDENTE";
 
-                    pedidos.add(new Pedido(numero, nomeCliente, itemPedido, valor, status));
-                    System.out.println("Pedido cadastrado com sucesso!");
-                    break;
+            pedidos.add(new Pedido(numero, nomeCliente, itemPedido, valor, status));
+            System.out.println("Pedido cadastrado com sucesso!");
+            break;
                 } 
 
-                case 2: {
-                    System.out.println("LISTA DE PEDIDOS");
-                    for (Pedido p : pedidos) {
-                        System.out.println(p.exibirInformacoes());
-                    }
-                    break;
-                }
-
-                case 3: {
-                    System.out.println("Digite o numero do pedidos: ");
-                    int busca = sc.nextInt();
-                    sc.nextLine();
-
-                    boolean encontrado = false;
-
-                    for (Pedido p : pedidos) {
-                        if (p.getNumero() == busca) {
-                    encontrado = true;
-
-                    System.out.println(p.exibirInformacoes());
-
-                    System.out.println("Digite o novo status:");
-                    String novoStatus = sc.nextLine();
-
-                    p.setStatus(novoStatus);
-
-                    System.out.println("Status atualizado com sucesso!");
-                     }
-                    }
-                    if (!encontrado) {
-                        System.out.println("Pedido não encontrado!");
-                        
-                    }
-                    
-                    break;
-                }
-                case 4: {
-                    System.out.println("Digite o número do pedido:");
-                    int busca = sc.nextInt();
-                    sc.nextLine();
-
-                    boolean encontrado = false;
-
-                    for (Pedido p : pedidos) {
-                    if (p.getNumero() == busca) {
-                    encontrado = true;
-                System.out.println(p.exibirInformacoes());
-                    }
-                }
-
-                if (!encontrado) {
-                System.out.println("Pedido não encontrado!");
-                }                           
-                break;
-                }
-
-                case 5: {
-                double total = 0;
-
-                for (Pedido p : pedidos) {
-                
-                  total = total + p.getValor();
-                }
-
-                System.out.println("Valor total dos pedidos: R$ " + total);
-
-
-                break;
-                
+        case 2: {
+            System.out.println("LISTA DE PEDIDOS");
+            for (Pedido p : pedidos) {
+            System.out.println(p.exibirInformacoes());
             }
-             case 0: {
-                    System.out.println("Encerrando o sistema...");
-                    break;
-                }
+            break;
+            }
 
-                default:{
-                    System.out.println("Opção inválida");
-                    break;
-                }
+        case 3: {
+            System.out.println("Digite o numero do pedidos: ");
+            int busca = sc.nextInt();
+            sc.nextLine();
+
+            boolean encontrado = false;
+
+            for (Pedido p : pedidos) {
+            if (p.getNumero() == busca) {
+            encontrado = true;
+
+            System.out.println(p.exibirInformacoes());
+
+            System.out.println("Digite o novo status:");
+            String novoStatus = sc.nextLine();
+
+            p.setStatus(novoStatus);
+
+            System.out.println("Status atualizado com sucesso!");
+             }
+            }
+
+            if (!encontrado) {
+            System.out.println("Pedido não encontrado!");
+            }
                     
+            break;
+            }
+
+        case 4: {
+            System.out.println("Digite o número do pedido:");
+            int busca = sc.nextInt();
+            sc.nextLine();
+
+            boolean encontrado = false;
+
+            for (Pedido p : pedidos) {
+            if (p.getNumero() == busca) {
+            encontrado = true;
+            System.out.println(p.exibirInformacoes());
+                }
+            }
+
+            if (!encontrado) {
+            System.out.println("Pedido não encontrado!");
+            }
+
+            break;
+            }
+
+        case 5: {
+            double total = 0;
+
+            for (Pedido p : pedidos) {
+                
+            total = total + p.getValor();
+            }
+
+            System.out.println("Valor total dos pedidos: R$ " + total);
+
+            break;   
+            }
+
+        case 0: {
+            System.out.println("Encerrando o sistema...");
+            break;
+            }
+
+            default:{
+            System.out.println("Opção inválida");
+            break;
+             }     
             }
 
         } while (opcao != 0);
@@ -136,4 +136,3 @@ public class Main {
         sc.close();
     }
 }
-
